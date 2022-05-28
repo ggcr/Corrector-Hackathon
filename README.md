@@ -5,6 +5,8 @@ The project is a website hosted in the Google Cloud that must be able to detect 
 
 ![alt text](https://i.gyazo.com/2c2faec952fa46422f02a6f276eb7e56.gif)
 
+Full-Stack web app to correct grammar mistakes. Deployed on Google Cloud, CI/CD support with Cloud Build Triggers in sync with this repo and external API calls made via Cloud Functions. Use of Python Web framework Flask and its templating engine Jinja.
+
 ### Local Installation
 
 ```bash
