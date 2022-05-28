@@ -7,7 +7,7 @@ https://corrector-sm.ew.r.appspot.com
 
 ![alt text](https://i.gyazo.com/2c2faec952fa46422f02a6f276eb7e56.gif)
 
-### Instalació Local
+### Local Installation
 
 ```bash
 git clone https://github.com/ggcr/Corrector-Hackathon.git ~/.
