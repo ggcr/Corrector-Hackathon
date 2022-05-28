@@ -39,6 +39,8 @@ os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = './corrector-sm-9ef8799680bd.json
 ## Google Cloud
 With the Google Cloud Build App, we are able to link this repository to the cloud instance. This will allow CI / CD to be made since every time a push is made to the main branch a Build Trigger will be activated in the cloud which will launch a new instance of our backend.
 
+![alt text](https://github.com/ggcr/Corrector-Hackathon/blob/main/public/imgs/diagram.drawio.png)
+
 ### Cloud Builder: `cloudbuild.yaml` file
 This trigger will deploy the app every time it detects changes to the `main` branch.
 * To do this, you must give "App Engine Deployer" permissions to this cloud builder user.
