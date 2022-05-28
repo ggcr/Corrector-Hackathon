@@ -1,0 +1,5 @@
+Flask==2.1.0
+flask_session
+pyspellchecker==0.6.3
+requests
+google-auth

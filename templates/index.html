@@ -1,0 +1,56 @@
+<!doctype html>
+
+<html>
+<head>
+  <title>Corrector Hackathon SM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div id="main">
+        <h1>Corrector</h1>
+        <form id="form-global" action="{{ url_for('root') }}" method="post">
+            {% if method == None or method == "Typewrite" %}
+                <select name="method" id="method">
+                    <option value="Typewrite" selected>Typewise API</option>
+                    <option value="PySpellchecker">PySpellchecker</option>
+                </select>
+            {% else %}
+                <select name="method" id="method">
+                    <option value="Typewrite">Typewrite API</option>
+                    <option value="PySpellchecker" selected>PySpellchecker</option>
+                </select>
+            {% endif %}
+            <textarea id="input-text" placeholder="Escriu algo..." name="input">{{ input }}</textarea>
+            <input type="submit" name="submit_button" value="Corregir" />
+            
+<div class="editable" contenteditable="true" oncut="return false" onpaste="return false" onkeydown="if(event.metaKey) return true; return false;" placeholder="El text corregit apareixerà aqui." name="output">
+{%- for w in output: -%}
+    {%- if w is iterable and (w is not string and w is not mapping) -%}
+    
+    {%- else -%}
+        {%- if loop.nextitem is not defined or loop.nextitem is string -%}
+            <li>{{w}} </li>
+        {%- else -%}
+            <li class={{loop.index}}>
+                <a onclick="showwords({{loop.nextitem}}, this, {{loop.index}})"  style="text-decoration: none; color:rgb(227, 63, 63); font-weight: 600;">{{w}}</a> 
+                <dialog class={{loop.index}}>
+                    <a style="float:right; color:rgb(11, 26, 110); font-weight: 600;" onclick="closeModal(this)">Close</a>
+                    {%- for sug in loop.nextitem -%}
+                        <p><a onclick="correctword(this, {{loop.index}}, this.parentNode)">{{sug}}</a><br></p>
+                    {%- endfor -%}
+                </dialog>
+            </li>
+        {%- endif -%}
+    {%- endif -%}
+{%- endfor -%}
+</div>
+
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
