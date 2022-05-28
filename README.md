@@ -3,8 +3,6 @@
 This is a project of the UAB Multimedia Systems Hackathon.
 The project is a website hosted in the Google Cloud that must be able to correct a text input and indicate faults.
 
-https://corrector-sm.ew.r.appspot.com
-
 ![alt text](https://i.gyazo.com/2c2faec952fa46422f02a6f276eb7e56.gif)
 
 ### Local Installation
