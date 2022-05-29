@@ -16,7 +16,7 @@ pip3 install -r requirements.txt
 python3 main.py
 ```
 
-If you have successfully completed the steps at http: // localhost: 8080 you will be able to see the web UI.
+If you have successfully completed the steps at http://localhost:8080 you will be able to see the web UI.
 
 To be able to run the website locally and make it functional, the project credentials in .json are required
 These credentials are not in this repo.
